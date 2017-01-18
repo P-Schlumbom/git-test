@@ -28,29 +28,6 @@ def handle_messages():
     send_message(PAT, sender, message)
   return "ok"
 
-'''def messaging_events(payload):
-  """Generate tuples of (sender_id, message_text) from the
-  provided payload.
-  """
-  data = json.loads(payload)
-  messaging_event = data["entry"][0]["messaging"]
-  for event in messaging_event:
-    if "message" in event and "text" in event["message"]:
-      incoming = event["message"]["text"]
-      greetings = ["hello", "hi", "good morning", "good afternoon", "good evening"]
-      greeted = False
-      if "hello" in incoming or "hi" in incoming or "good morning" in incoming or "good afternoon" in incoming or "good evening" in incoming:
-        yield event["sender"]["id"], "Hi!"
-      elif incoming == "every existing thing is born without reason":
-        yield event["sender"]["id"], "and prolongs itself out of weakness"
-      elif incoming == "jeder für sich":
-          yield event["sender"]["id"], "und gott gegen alle"
-      else:
-        #yield event["sender"]["id"], event["message"]["text"].encode('unicode_escape')
-        yield event["sender"]["id"], "Yes, quite"
-      yield event["sender"]["id"], event["message"]["text"].encode('unicode_escape')
-    else:
-      yield event["sender"]["id"], "I can't echo this"'''
 def messaging_events(payload):
   """Generate tuples of (sender_id, message_text) from the
   provided payload.
