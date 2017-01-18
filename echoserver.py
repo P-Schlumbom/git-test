@@ -36,8 +36,12 @@ def messaging_events(payload):
   messaging_events = data["entry"][0]["messaging"]
   for event in messaging_events:
     if "message" in event and "text" in event["message"]:
-      if event["message"]["text"] == "hello":
-        yield event["sender"]["id"], "hi"
+      if event["message"]["text"] == "Hello" or event["message"]["text"] == "Hi" or event["message"]["text"] == "Good morning" or event["message"]["text"] == "Good afternoon":
+        yield event["sender"]["id"], "Hi!"
+      elif event["message"]["text"] == "Every existing thing is born without reason":
+        yield event["sender"]["id"], "and prolongs itself out of weakness"
+      elif event["message"]["text"] == "Jeder für sich":
+        yield event["message"]["text"] == "und gott gegen alle"
       else:
         yield event["sender"]["id"], event["message"]["text"].encode('unicode_escape')
     else:
