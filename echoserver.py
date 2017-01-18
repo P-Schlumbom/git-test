@@ -40,8 +40,6 @@ def messaging_events(payload):
         yield event["sender"]["id"], "Hi!"
       elif event["message"]["text"] == "Every existing thing is born without reason":
         yield event["sender"]["id"], "and prolongs itself out of weakness"
-      elif event["message"]["text"] == "Jeder fuer sich":
-        yield event["message"]["text"] == "und gott gegen alle"
       else:
         yield event["sender"]["id"], event["message"]["text"].encode('unicode_escape')
     else:
