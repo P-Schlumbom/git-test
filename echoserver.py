@@ -48,6 +48,7 @@ def messaging_events(payload):
       else:
         #yield event["sender"]["id"], event["message"]["text"].encode('unicode_escape')
         yield event["sender"]["id"], "Yes, quite"
+      yield event["sender"]["id"], event["message"]["text"].encode('unicode_escape')
     else:
       yield event["sender"]["id"], "I can't echo this"
 
